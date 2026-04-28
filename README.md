@@ -1,36 +1,178 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cleuza Priori
 
-## Getting Started
+Landing page institucional para o salão de beleza Cleuza Priori, desenvolvida com `Next.js 16`, `React 19`, `TypeScript` e `Tailwind CSS 4`.
 
-First, run the development server:
+O projeto foi estruturado para concentrar o conteúdo em um único arquivo de dados, facilitando manutenção de textos, links, mídias e CTAs sem espalhar conteúdo pelos componentes.
+
+## Stack
+
+- `Next.js 16` com App Router
+- `React 19`
+- `TypeScript`
+- `Tailwind CSS 4`
+- `framer-motion` para animações de entrada e transições
+- `gsap` + `ScrollTrigger` + `lenis` para suavização e comportamento de rolagem
+- `lucide-react` para ícones
+
+## Scripts
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Como rodar localmente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Pré-requisitos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `Node.js 20+`
+- `npm`
 
-## Learn More
+### Instalação
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Desenvolvimento
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+Abra `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Produção local
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm run start
+```
+
+## Estrutura do projeto
+
+```text
+app/
+  layout.tsx              # layout global e metadata
+  page.tsx                # composição da landing page
+  globals.css             # tokens visuais e estilos globais
+
+components/
+  landing/                # seções da página
+  ui/                     # componentes reutilizáveis de interface
+  SmoothScroll.tsx        # integração Lenis + GSAP
+
+data/
+  landing.ts              # conteúdo central da landing
+
+lib/
+  links.ts                # geração de links de contato, WhatsApp, Maps, Instagram
+  utils.ts                # utilitários gerais
+
+public/
+  beauty/                 # imagens, vídeos e peças da marca
+```
+
+## Onde editar
+
+### Conteúdo principal
+
+Edite `data/landing.ts` para alterar:
+
+- nome do negócio
+- descrição
+- telefone e WhatsApp
+- Instagram, Linktree e Google Maps
+- hero principal
+- serviços
+- galeria
+- depoimentos
+- FAQ
+- CTA final
+- links do rodapé
+
+Esse arquivo é a principal fonte de verdade da landing.
+
+### Metadados e SEO
+
+Revise `app/layout.tsx` e `app/page.tsx`.
+
+Hoje existem URLs placeholder com `https://example.com` em:
+
+- `metadataBase`
+- `openGraph.url`
+- JSON-LD da `BeautySalon`
+
+Antes de publicar, substitua pelo domínio real do projeto.
+
+### Mídia e identidade visual
+
+Arquivos estáticos ficam em `public/beauty/`.
+
+Você pode trocar:
+
+- logo
+- imagens da galeria
+- imagens dos serviços
+- vídeo e poster do hero
+- imagem de Open Graph
+
+Se alterar nomes de arquivos, atualize também os caminhos em `data/landing.ts` ou `app/layout.tsx`.
+
+### Links e contato
+
+Os links principais são montados em `lib/links.ts`, incluindo:
+
+- telefone
+- Instagram
+- Google Maps
+- Linktree
+- link principal com mensagem para WhatsApp
+
+Se quiser mudar a mensagem padrão do WhatsApp, ajuste `DEFAULT_WHATSAPP_MESSAGE` nesse arquivo.
+
+## Seções atuais da landing
+
+- hero com vídeo
+- prova social
+- serviços
+- seção de experiência
+- galeria
+- Instagram
+- localização
+- depoimentos
+- FAQ
+- CTA final
+- footer
+
+## Observações técnicas
+
+- `SmoothScroll.tsx` desativa a rolagem suavizada em dispositivos touch e para usuários com `prefers-reduced-motion`.
+- A tipografia usa `Manrope` e `Cormorant Garamond` via `next/font/google`.
+- As cores e superfícies estão centralizadas em variáveis CSS dentro de `app/globals.css`.
+- O projeto usa aliases como `@/components`, `@/data` e `@/lib`.
+
+## Deploy
+
+O projeto pode ser publicado em qualquer ambiente compatível com `Next.js`, como Vercel, VPS ou serviços com suporte a Node.js.
+
+Fluxo básico:
+
+```bash
+npm install
+npm run build
+npm run start
+```
+
+Antes do deploy, revise:
+
+- domínio real no SEO e JSON-LD
+- links de contato
+- imagens finais
+- textos com dados oficiais do salão
+
+## Licença
+
+Este repositório não define uma licença pública no momento.
