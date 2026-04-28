@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export function ScrollPathBackground() {
   const rootRef = useRef<HTMLDivElement>(null);
+  const revealRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const paths = Array.from(
@@ -17,11 +18,37 @@ export function ScrollPathBackground() {
     }
 
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealElement = revealRef.current;
+
     paths.forEach((path) => {
       const length = path.getTotalLength();
       path.style.strokeDasharray = `${length}`;
       path.style.strokeDashoffset = prefersReducedMotion ? "0" : `${length}`;
     });
+
+    if (revealElement) {
+      if (prefersReducedMotion) {
+        gsap.set(revealElement, {
+          opacity: 1,
+          clipPath: "inset(0% 0% 0% 0%)",
+        });
+      } else {
+        gsap.fromTo(
+          revealElement,
+          {
+            opacity: 0,
+            clipPath: "inset(0% 0% 100% 0%)",
+          },
+          {
+            opacity: 1,
+            clipPath: "inset(0% 0% 0% 0%)",
+            duration: 1.35,
+            ease: "power3.out",
+            delay: 0.18,
+          },
+        );
+      }
+    }
 
     if (prefersReducedMotion) {
       return;
@@ -65,7 +92,11 @@ export function ScrollPathBackground() {
       aria-hidden="true"
       className="pointer-events-none absolute inset-0 z-0 overflow-hidden"
     >
-      <div className="absolute left-1/2 top-[25svh] hidden h-[100%] w-[300%] -translate-x-1/2 md:block">
+      <div
+        ref={revealRef}
+        className="absolute left-1/2 top-[25svh] hidden h-[100%] w-[300%] -translate-x-1/2 md:block"
+        style={{ clipPath: "inset(0% 0% 100% 0%)", opacity: 0 }}
+      >
         <svg
           width="2965"
           height="9212"
