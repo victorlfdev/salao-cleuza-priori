@@ -1,5 +1,8 @@
 import { landingData } from "@/data/landing";
 
+const DEFAULT_WHATSAPP_MESSAGE =
+  "Oi, vim pelo site e gostaria de marcar um hor\u00e1rio";
+
 function sanitizeDigits(value: string) {
   return value.replace(/\D/g, "");
 }
@@ -33,7 +36,8 @@ export function getPrimaryContactLink() {
   const whatsapp = withBrazilCode(sanitizeDigits(landingData.business.whatsapp));
 
   if (whatsapp) {
-    return `https://wa.me/${whatsapp}`;
+    const message = encodeURIComponent(DEFAULT_WHATSAPP_MESSAGE);
+    return `https://wa.me/${whatsapp}?text=${message}`;
   }
 
   if (landingData.business.linktree) {

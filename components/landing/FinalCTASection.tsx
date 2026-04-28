@@ -24,7 +24,7 @@ export function FinalCTASection() {
           <Marquee text="BELEZA • CUIDADO • AUTOESTIMA • ELEGÂNCIA • CLEUZA PRIORI •" />
           <div className="px-5 py-12 text-center sm:px-8 sm:py-16">
             <p className="text-xs uppercase tracking-[0.35em] text-[var(--gold)]">
-              CTA FINAL
+              AGENDE SEU HORÁRIO
             </p>
             <h2 className="mx-auto mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-6xl">
               {landingData.finalCta.title}

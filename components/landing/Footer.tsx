@@ -8,7 +8,9 @@ export function Footer() {
           <p className="text-lg font-semibold text-[var(--text)]">
             {landingData.business.name}
           </p>
-          <p className="mt-3 leading-7">{landingData.footer.description}</p>
+          <p className="mt-3 leading-7">
+            Cortes, mechas, produções especiais e formação profissional com o cuidado e a assinatura de Cleuza Priori.
+          </p>
         </div>
 
         <div className="flex flex-col gap-4 lg:items-end">
@@ -26,8 +28,19 @@ export function Footer() {
               </a>
             ))}
           </div>
-          <p>© 2026 {landingData.business.name}. Todos os direitos reservados.</p>
-          <p>Landing page desenvolvida por [Seu Nome/Estudio]</p>
+          <p>(c) 2026 {landingData.business.name}. Todos os direitos reservados.</p>
+          <p>
+            Landing page desenvolvida por{" "}
+            <a
+              href="https://github.com/victorlfdev"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub de victorlfdev"
+              className="transition-colors hover:text-[var(--champagne)]"
+            >
+              victorlfdev
+            </a>
+          </p>
         </div>
       </div>
     </footer>

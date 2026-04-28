@@ -6,20 +6,16 @@ import { GradientButton } from "@/components/ui/GradientButton";
 import { landingData } from "@/data/landing";
 import { getPrimaryContactLink } from "@/lib/links";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navItems = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Servicos", href: "#servicos" },
-  { label: "Experiencia", href: "#experiencia" },
+  { label: "Início", href: "#inicio" },
+  { label: "Serviços", href: "#servicos" },
+  { label: "Experiência", href: "#experiencia" },
   { label: "Galeria", href: "#galeria" },
-  { label: "Localizacao", href: "#localizacao" },
+  { label: "Localização", href: "#localizacao" },
 ];
 
-const initials = landingData.business.name
-  .split(" ")
-  .map((part) => part[0])
-  .join("")
-  .slice(0, 2);
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,14 +47,22 @@ export function Navbar() {
             aria-label={`Ir para o inicio da landing ${landingData.business.name}`}
             className="flex items-center gap-3"
           >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border bg-white/70 text-sm font-semibold tracking-[0.25em] text-[var(--champagne)]">
-              {initials}
-            </span>
+            <Image
+              src={landingData.business.logo}
+              alt={`Logo da ${landingData.business.name}`}
+              width={40}
+              height={40}
+              className="flex h-10 w-10 items-center justify-center rounded-full border bg-white/70 text-sm font-semibold tracking-[0.25em] text-[var(--champagne)]"
+            />
             <div className="hidden sm:block">
               <p className="text-sm font-semibold">{landingData.business.name}</p>
               <p className="text-xs text-[var(--muted)]">{landingData.business.category}</p>
             </div>
           </a>
+
+          <p className="px-3 text-center text-sm font-semibold sm:hidden">
+            {landingData.business.name}
+          </p>
 
           <nav className="hidden items-center gap-6 lg:flex">
             {navItems.map((item) => (

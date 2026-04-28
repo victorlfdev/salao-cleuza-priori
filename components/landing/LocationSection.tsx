@@ -21,14 +21,24 @@ export function LocationSection() {
               highlightedWord={landingData.business.name}
               description={landingData.location.subtitle}
             />
-            <div className="rounded-[28px] border bg-[rgba(255,255,255,0.82)] p-6">
-              <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Cidade</p>
-              <p className="mt-3 text-3xl font-semibold">{landingData.location.city}</p>
-              <div className="mt-6 h-px w-full bg-[var(--gradient-premium)]" />
-              <p className="mt-6 max-w-xl text-sm leading-7 text-[var(--muted)]">
-                Use este bloco como area de mapa, composicao visual ou embed leve para reforcar conveniencia e levar o visitante direto para rota ou contato.
-              </p>
-            </div>
+            <a
+              href={getMapsLink()}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir localização do salão no Google Maps"
+              className="relative block overflow-hidden rounded-[28px] border bg-[rgba(255,255,255,0.82)] p-6 transition-transform duration-300 hover:scale-[1.01]"
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center opacity-90"
+                style={{ backgroundImage: "url('/beauty/maps.png')" }}
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,253,249,0.52),rgba(255,253,249,0.74))]" />
+              <div className="relative">
+                <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Cidade</p>
+                <p className="mt-3 text-3xl font-semibold">{landingData.location.city}</p>
+                <div className="mt-6 h-px w-full bg-[var(--gradient-premium)]" />
+              </div>
+            </a>
           </div>
         </GlassCard>
 
@@ -37,7 +47,7 @@ export function LocationSection() {
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Contato direto</p>
             <p className="mt-4 text-3xl font-semibold">{landingData.location.phone}</p>
             <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-              Sem endereco inventado: o template usa cidade e links oficiais para facilitar rotas e contato imediato.
+              Fale com o salão, tire dúvidas sobre horários e abra sua rota com rapidez para chegar com tranquilidade.
             </p>
           </div>
           <div className="flex flex-col gap-3">

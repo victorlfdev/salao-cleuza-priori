@@ -59,7 +59,7 @@ export function HeroSection() {
             <GradientButton
               href={getMapsLink()}
               label={landingData.hero.secondaryCta}
-              ariaLabel="Abrir localizacao no Google Maps"
+              ariaLabel="Abrir localização no Google Maps"
               external
               variant="secondary"
             />
@@ -100,7 +100,7 @@ export function HeroSection() {
         >
           <div className="absolute inset-x-[12%] top-8 h-40 rounded-full bg-[radial-gradient(circle,rgba(200,134,123,0.22),transparent_72%)] blur-3xl" />
           <div className="relative overflow-hidden rounded-[32px] border bg-[var(--surface)] shadow-[0_26px_72px_rgba(132,96,80,0.14)]">
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.28),rgba(255,248,242,0.58))]" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.28),rgba(255,248,242,0.1))]" />
             <video
               autoPlay
               muted
@@ -122,17 +122,17 @@ export function HeroSection() {
             className="absolute -left-2 top-8 rounded-[28px] border bg-[rgba(255,253,249,0.94)] px-5 py-4 backdrop-blur-xl sm:-left-6"
           >
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">
-              Experiencia premium
+              Experiência premium
             </p>
             <p className="mt-2 text-sm text-[var(--muted)]">
-              Ambiente sofisticado, atendimento atencioso e foco total em voce.
+              Ambiente sofisticado, atendimento atencioso e foco total em você.
             </p>
           </motion.div>
           <motion.a
             href={getPhoneLink()}
             target="_blank"
             rel="noreferrer"
-            aria-label="Ligar para o salao"
+            aria-label="Ligar para o salão"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 4.4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
             className="absolute -right-2 bottom-8 flex items-center gap-3 rounded-full border bg-[rgba(255,253,249,0.97)] px-5 py-3 backdrop-blur-xl sm:-right-6"

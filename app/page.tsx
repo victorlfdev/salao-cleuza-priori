@@ -1,6 +1,5 @@
 import Script from "next/script";
 import { SmoothScroll } from "@/components/SmoothScroll";
-import { BeforeAfterSection } from "@/components/landing/BeforeAfterSection";
 import { ExperienceSection } from "@/components/landing/ExperienceSection";
 import { FAQSection } from "@/components/landing/FAQSection";
 import { FinalCTASection } from "@/components/landing/FinalCTASection";
@@ -10,6 +9,7 @@ import { HeroSection } from "@/components/landing/HeroSection";
 import { InstagramSection } from "@/components/landing/InstagramSection";
 import { LocationSection } from "@/components/landing/LocationSection";
 import { Navbar } from "@/components/landing/Navbar";
+import { ScrollPathBackground } from "@/components/landing/ScrollPathBackground";
 import { ServicesSection } from "@/components/landing/ServicesSection";
 import { SocialProofSection } from "@/components/landing/SocialProofSection";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
@@ -43,18 +43,20 @@ export default function Home() {
       <div className="relative overflow-x-clip bg-[var(--bg)] text-[var(--text)]">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(221,182,122,0.18),transparent_28%),radial-gradient(circle_at_85%_18%,rgba(200,134,123,0.12),transparent_20%),linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,255,255,0.18)_26%,transparent_46%)]" />
         <Navbar />
-        <main className="relative">
-          <HeroSection />
-          <SocialProofSection />
-          <ServicesSection />
-          <ExperienceSection />
-          <BeforeAfterSection />
-          <GallerySection />
-          <InstagramSection />
-          <LocationSection />
-          <TestimonialsSection />
-          <FAQSection />
-          <FinalCTASection />
+        <main className="spotlight relative z-0">
+          <ScrollPathBackground />
+          <div className="relative z-10">
+            <HeroSection />
+            <SocialProofSection />
+            <ServicesSection />
+            <ExperienceSection />
+            <GallerySection />
+            <InstagramSection />
+            <LocationSection />
+            <TestimonialsSection />
+            <FAQSection />
+            <FinalCTASection />
+          </div>
         </main>
         <Footer />
       </div>

@@ -15,9 +15,9 @@ export function FAQSection() {
         <SectionHeading
           align="center"
           eyebrow="FAQ"
-          title="Perguntas frequentes para remover objecoes"
-          highlightedWord="objecoes"
-          description="Uma estrutura reutilizavel para responder duvidas, reduzir friccao e acelerar o clique nos CTAs."
+          title="Perguntas frequentes para remover objeções"
+          highlightedWord="objeções"
+          description="Tire dúvidas sobre atendimento, produções especiais, cursos e formas de contato com o salão."
         />
 
         <div className="mx-auto mt-12 max-w-4xl space-y-3">

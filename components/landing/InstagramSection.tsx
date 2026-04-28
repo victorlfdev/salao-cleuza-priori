@@ -61,7 +61,7 @@ export function InstagramSection() {
                   ))}
                 </div>
                 <div className="mt-5 rounded-[22px] border bg-white/88 p-4 text-sm leading-7 text-[var(--muted)]">
-                  Conteudos, bastidores, resultados e inspiracoes para manter a marca ativa e fortalecer a conversao social do template.
+                  Acompanhe resultados, inspirações e novidades do salão para conhecer de perto o estilo e o cuidado presentes em cada atendimento.
                 </div>
               </div>
             </div>
@@ -70,14 +70,14 @@ export function InstagramSection() {
           <motion.div
             animate={{ x: [0, 6, 0], y: [0, -8, 0] }}
             transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-            className="absolute -left-2 top-10 rounded-full border bg-[rgba(255,253,249,0.96)] px-4 py-3 text-xs uppercase tracking-[0.3em] text-[var(--gold)] backdrop-blur-xl"
+            className="absolute -left-2 top-10 rounded-full border bg-[rgba(255,253,249,0.96)] px-4 py-3 text-xs uppercase tracking-[0.3em] text-[var(--gold)] backdrop-blur-xl hidden sm:block"
           >
             Feed premium
           </motion.div>
           <motion.div
             animate={{ x: [0, -8, 0], y: [0, 8, 0] }}
             transition={{ duration: 5.4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-            className="absolute -right-2 bottom-12 rounded-full border bg-[rgba(255,253,249,0.96)] px-4 py-3 text-xs uppercase tracking-[0.3em] text-[var(--gold)] backdrop-blur-xl"
+            className="absolute -right-2 bottom-12 rounded-full border bg-[rgba(255,253,249,0.96)] px-4 py-3 text-xs uppercase tracking-[0.3em] text-[var(--gold)] backdrop-blur-xl hidden sm:block"
           >
             Reels + provas sociais
           </motion.div>

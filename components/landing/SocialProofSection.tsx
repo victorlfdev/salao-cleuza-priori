@@ -19,8 +19,12 @@ export function SocialProofSection() {
               transition={{ duration: 0.6, delay: index * 0.08 }}
             >
               <GlassCard className="h-full p-6">
-                <div className="mb-5 h-11 w-11 rounded-2xl border bg-white/70">
-                  <div className="m-3 h-5 w-5 rounded-full bg-[var(--gradient-premium)]" />
+                <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl border bg-white/70 text-[var(--gold)]">
+                  <span
+                    aria-hidden="true"
+                    className="h-5 w-5 [&_svg]:h-5 [&_svg]:w-5"
+                    dangerouslySetInnerHTML={{ __html: item.iconSvg }}
+                  />
                 </div>
                 <p className="text-xs uppercase tracking-[0.28em] text-[var(--muted)]">
                   {item.label}

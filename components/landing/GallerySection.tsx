@@ -65,7 +65,7 @@ export function GallerySection() {
 
         <div
           ref={gridRef}
-          className="mt-12 grid auto-rows-[180px] gap-4 sm:grid-cols-3 lg:auto-rows-[220px]"
+          className="mt-12 grid auto-rows-[260px] gap-4 sm:grid-cols-3 sm:auto-rows-[260px] lg:auto-rows-[320px]"
         >
           {landingData.gallery.images.map((image, index) => (
             <motion.figure

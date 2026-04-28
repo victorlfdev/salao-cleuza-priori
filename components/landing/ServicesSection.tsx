@@ -20,16 +20,16 @@ const cardSpans = [
 
 export function ServicesSection() {
   return (
-    <AnimatedSection id="servicos" className="section-space">
+    <AnimatedSection id="serviços" className="section-space">
       <div className="container-shell">
         <SectionHeading
-          eyebrow="SERVICOS"
-          title="Servicos para transformar seu visual"
+          eyebrow="SERVIÇOS"
+          title="Serviços para transformar seu visual"
           highlightedWord="transformar"
-          description="Uma base premium para apresentar especialidades, reforcar autoridade e conduzir o clique para agendamento em qualquer negocio de beleza."
+          description="Uma base premium para apresentar especialidades, reforçar autoridade e conduzir o clique para agendamento em qualquer negócio de beleza."
         />
 
-        <div className="mt-12 grid auto-rows-[220px] gap-4 md:grid-cols-3">
+        <div className="mt-12 grid auto-rows-[320px] gap-4 md:auto-rows-[280px] md:grid-cols-3 lg:auto-rows-[290px] xl:auto-rows-[270px]">
           {landingData.services.map((service, index) => (
             <motion.article
               key={service.title}
@@ -38,7 +38,7 @@ export function ServicesSection() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: index * 0.06 }}
               className={cn(
-                "group relative overflow-hidden rounded-[28px] border bg-[var(--surface-soft)]",
+                "group relative min-h-[320px] overflow-hidden rounded-[28px] border bg-[var(--surface-soft)] md:min-h-[280px] lg:min-h-[290px] xl:min-h-[270px]",
                 cardSpans[index],
               )}
             >
@@ -48,10 +48,10 @@ export function ServicesSection() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(255,252,248,0.96)] via-[rgba(255,249,244,0.56)] to-[rgba(255,249,244,0.12)] transition-colors duration-500 group-hover:from-[rgba(255,252,248,0.92)]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(255,252,248,0.66)] via-[rgba(255,249,244,0.46)] to-[rgba(255,249,244,0.12)] transition-colors duration-500 group-hover:from-[rgba(255,252,248,0.92)]" />
               <div className="absolute inset-x-0 top-0 h-px bg-transparent transition-all duration-500 group-hover:bg-[var(--gradient-premium)]" />
               <div className="relative flex h-full flex-col justify-end p-6 sm:p-7">
-                <span className="mb-4 inline-flex w-fit rounded-full border bg-[rgba(255,255,255,0.92)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-[var(--gold)]">
+                <span className="mb-4 inline-flex w-fit max-w-full rounded-full border bg-[rgba(255,255,255,0.92)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--gold)]">
                   {service.badge}
                 </span>
                 <h3 className="max-w-xs text-2xl font-semibold tracking-[-0.03em]">

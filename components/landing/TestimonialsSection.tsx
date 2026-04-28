@@ -13,11 +13,11 @@ export function TestimonialsSection() {
         <SectionHeading
           align="center"
           eyebrow="DEPOIMENTOS"
-          title="O que clientes sentem depois da experiencia"
-          highlightedWord="experiencia"
-          description="Bloco comercial pronto para receber provas sociais reais e reforcar confianca logo antes do fechamento."
+          title="O que clientes sentem depois da experiência"
+          highlightedWord="experiência"
+          description="Relatos de quem já viveu esse cuidado de perto e saiu do salão se sentindo ainda mais confiante."
         />
-        {/* Substituir por avaliacoes reais do Google, Instagram ou WhatsApp. */}
+        {/* Substituir por avaliações reais do Google, Instagram ou WhatsApp. */}
         <div className="mt-12 grid gap-4 lg:grid-cols-3">
           {landingData.testimonials.map((testimonial, index) => (
             <motion.div
