@@ -32,7 +32,7 @@ export function LocationSection() {
                 className="absolute inset-0 bg-cover bg-center opacity-90"
                 style={{ backgroundImage: "url('/beauty/maps.png')" }}
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,253,249,0.52),rgba(255,253,249,0.74))]" />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,253,249,0.62),rgba(255,253,249,0.1))]" />
               <div className="relative">
                 <p className="text-xs uppercase tracking-[0.3em] text-[var(--gold)]">Cidade</p>
                 <p className="mt-3 text-3xl font-semibold">{landingData.location.city}</p>

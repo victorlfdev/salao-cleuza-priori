@@ -1,12 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  
+  allowedDevOrigins: ["100.120.169.33"],
+  images: {
+    localPatterns: [
+      {
+        pathname: "/beauty/**",
+        search: "?v=*",
+      },
+      {
+        pathname: "/beauty/**",
+      },
+    ],
+  },
 };
-
-module.exports = {
-  allowedDevOrigins: ['100.120.169.33'],
-}
 
 export default nextConfig;

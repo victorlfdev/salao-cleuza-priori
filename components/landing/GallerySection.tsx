@@ -69,7 +69,7 @@ export function GallerySection() {
         >
           {landingData.gallery.images.map((image, index) => (
             <motion.figure
-              key={image.src}
+              key={`${image.src}-${image.version ?? "base"}`}
               data-gallery-item
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -80,8 +80,12 @@ export function GallerySection() {
                 spans[index],
               )}
             >
+              {/*
+                A query string opcional permite invalidar cache quando a imagem
+                é substituída sem mudar o nome do arquivo.
+              */}
               <Image
-                src={image.src}
+                src={image.version ? `${image.src}?v=${image.version}` : image.src}
                 alt={image.alt}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-[1.04] group-hover:rotate-[0.8deg]"

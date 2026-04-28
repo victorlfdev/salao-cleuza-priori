@@ -15,6 +15,7 @@ export type ServiceItem = {
 export type GalleryImage = {
   src: string;
   alt: string;
+  version?: string;
 };
 
 export type BeforeAfterItem = {
@@ -255,8 +256,9 @@ export const landingData: LandingData = {
       "Ambiente, atendimento, finalizações e bastidores apresentados em uma galeria clara, elegante e fácil de adaptar com fotos reais do cliente.",
     images: [
       {
-        src: "/beauty/gallery-1.jpg",
+        src: "/beauty/gallery-1.png",
         alt: "Atendimento personalizado e preparação cuidadosa",
+        version: "2026-04-28",
       },
       {
         src: "/beauty/gallery-2.png",
