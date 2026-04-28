@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f7f1ea;
+  --surface: #fffdf9;
+  --surface-soft: #fff8f2;
+  --surface-light: #f6ede5;
+  --text: #2f221e;
+  --muted: #796660;
+  --muted-strong: #564640;
+  --stroke: rgba(80, 53, 44, 0.12);
+  --stroke-strong: rgba(80, 53, 44, 0.22);
+  --gold: #a97828;
+  --rose: #b8746b;
+  --champagne: #ddb67a;
+  --gradient-premium: linear-gradient(90deg, #b88735 0%, #c6867b 48%, #efcf9d 100%);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-cormorant);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  border-color: var(--stroke);
+}
+
+html {
+  background: var(--bg);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(221, 182, 122, 0.22), transparent 34%),
+    radial-gradient(circle at 85% 10%, rgba(200, 134, 123, 0.14), transparent 24%),
+    radial-gradient(circle at 10% 35%, rgba(255, 255, 255, 0.72), transparent 18%),
+    linear-gradient(180deg, #fffdf9 0%, #fbf4ee 48%, #f6eee7 100%),
+    var(--bg);
+  color: var(--text);
+}
+
+::selection {
+  background: rgba(214, 179, 106, 0.28);
+  color: var(--text);
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a,
+  button {
+    @apply outline-none;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply ring-2 ring-[var(--champagne)] ring-offset-2 ring-offset-[var(--bg)];
+  }
+}
+
+@layer utilities {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .premium-border {
+    position: relative;
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--surface), var(--surface)) padding-box,
+      var(--gradient-premium) border-box;
+  }
+
+  .glass-surface {
+    @apply border backdrop-blur-xl;
+    background: rgba(255, 252, 248, 0.88);
+    box-shadow: 0 22px 60px rgba(132, 96, 80, 0.09);
+  }
+
+  .text-gradient {
+    background: var(--gradient-premium);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .section-space {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+
+  .noise-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(44, 32, 29, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(44, 32, 29, 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: radial-gradient(circle at center, black, transparent 88%);
+  }
 }
