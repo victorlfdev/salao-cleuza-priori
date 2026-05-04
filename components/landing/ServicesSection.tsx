@@ -48,7 +48,7 @@ export function ServicesSection() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(255,252,248,0.66)] via-[rgba(255,249,244,0.46)] to-[rgba(255,249,244,0.12)] transition-colors duration-500 group-hover:from-[rgba(255,252,248,0.92)]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[rgba(255,252,248,0.66)] via-[rgba(255,249,244,0.36)] to-[rgba(255,249,244,0.12)] transition-colors duration-500 group-hover:from-[rgba(255,252,248,0.1)]" />
               <div className="absolute inset-x-0 top-0 h-px bg-transparent transition-all duration-500 group-hover:bg-[var(--gradient-premium)]" />
               <div className="relative flex h-full flex-col justify-end p-6 sm:p-7">
                 <span className="mb-4 inline-flex w-fit max-w-full rounded-full border bg-[rgba(255,255,255,0.92)] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--gold)]">

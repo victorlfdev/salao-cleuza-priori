@@ -176,7 +176,7 @@ export const landingData: LandingData = {
       title: "Cortes personalizados",
       description:
         "Cortes desenhados para valorizar estilo, rotina, formato de rosto e identidade.",
-      image: "/beauty/service-cut.png",
+      image: "/beauty/service-cut.jpg",
       badge: "Assinatura",
     },
     {
